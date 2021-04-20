@@ -12,94 +12,92 @@ const minify = require('gulp-minify');
 const autoprefixer = require('gulp-autoprefixer');
 const rollup = require('gulp-rollup');
 const less = require('gulp-less');
-const resolve = require('rollup-plugin-node-resolve');
 
 gulp.task('getAllHTML', () => {
-    return gulp
-        .src('src/markup/*.html')
-        .pipe(concat('index.html'))
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('public'));
+  return gulp
+    .src('src/markup/*.html')
+    .pipe(concat('index.html'))
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('public'));
 });
 
 gulp.task('getAllCSS', () => {
-    return gulp
-        .src('src/styles/*.less', { since: gulp.lastRun('getAllCSS') })
-        .pipe(
-            plumber({
-                errorHandler: notify.onError(function (err) {
-                    return {
-                        title: 'less',
-                        message: err.message,
-                    };
-                }),
-            })
-        )
-        .pipe(remember())
-        .pipe(less())
-        .pipe(concat('styles.css'))
-        .pipe(
-            autoprefixer({
-                cascade: false,
-            })
-        )
-        .pipe(gulp.dest('public/styles'))
-        .pipe(cssmin())
-        .pipe(rename('styles.min.css'))
-        .pipe(gulp.dest('public/styles'));
+  return gulp
+    .src('src/styles/*.less', { since: gulp.lastRun('getAllCSS') })
+    .pipe(
+      plumber({
+        errorHandler: notify.onError(function (err) {
+          return {
+            title: 'less',
+            message: err.message,
+          };
+        }),
+      })
+    )
+    .pipe(remember())
+    .pipe(less())
+    .pipe(concat('styles.css'))
+    .pipe(
+      autoprefixer({
+        cascade: false,
+      })
+    )
+    .pipe(gulp.dest('public/styles'))
+    .pipe(cssmin())
+    .pipe(rename('styles.min.css'))
+    .pipe(gulp.dest('public/styles'));
 });
 
 gulp.task('clean', (done) => {
-    del(['public/styles/styles.css']);
-    del(['public/index.html']);
-    del(['public/scripts/scripts.js']);
-    done();
+  del(['public/styles/styles.css']);
+  del(['public/index.html']);
+  del(['public/scripts/scripts.js']);
+  done();
 });
 
 gulp.task('getAllJS', () => {
-    return (
-        gulp
-            .src(['./src/scripts/*.js'])
-            .pipe(
-                plumber({
-                    errorHandler: notify.onError((err) => {
-                        return {
-                            title: 'js',
-                            message: err.message,
-                            err: err,
-                        };
-                    }),
-                })
-            )
-            .pipe(
-                rollup({
-                    input: './src/scripts/main.js',
-                    //plugins: [resolve()],
-                    output: {
-                        format: 'iife',
-                    },
-                })
-            )
-            //.pipe(minify())
-            .pipe(gulp.dest('./public/scripts'))
-    );
+  return (
+    gulp
+      .src(['./src/scripts/*.js'])
+      .pipe(
+        plumber({
+          errorHandler: notify.onError((err) => {
+            return {
+              title: 'js',
+              message: err.message,
+              err: err,
+            };
+          }),
+        })
+      )
+      .pipe(
+        rollup({
+          input: './src/scripts/main.js',
+          output: {
+            format: 'iife',
+          },
+        })
+      )
+      //.pipe(minify())
+      .pipe(gulp.dest('./public/scripts'))
+  );
 });
 
 gulp.task('watch', () => {
-    gulp.watch('src/styles/*.less', gulp.series('getAllCSS'));
-    gulp.watch('src/markup/*.html', gulp.series('getAllHTML'));
-    gulp.watch('src/scripts/*.js', gulp.series('getAllJS'));
+  gulp.watch('src/styles/*.less', gulp.series('getAllCSS'));
+  gulp.watch('src/markup/*.html', gulp.series('getAllHTML'));
+  gulp.watch('src/scripts/*.js', gulp.series('getAllJS'));
 });
 
 gulp.task('build', gulp.series('clean', gulp.parallel('getAllCSS', 'getAllHTML', 'getAllJS')));
 
 gulp.task('serve', () => {
-    browserSync.init({
-        server: 'public',
-        tunnel: true,
-    });
+  browserSync.init({
+    server: 'public',
+    tunnel: true,
+  });
 
-    gulp.watch('public/**/*.*').on('change', browserSync.reload);
+  gulp.watch('public/**/*.*').on('change', browserSync.reload);
 });
 
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));

@@ -1,0 +1,145 @@
+@import './01-variables.less';
+
+.header {
+  position: fixed;
+  width   : 100%;
+  z-index : 10;
+
+  &__top {
+    background-color: #000;
+    padding-top     : 28px;
+    padding-bottom  : 30px;
+  }
+
+  &__container {
+    position: relative;
+
+    display    : flex;
+    align-items: center;
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__logo {
+    //height        : 40px;
+    margin-right  : 160px;
+    vertical-align: middle;
+  }
+
+  &__logo-img {
+    max-width: 173px;
+  }
+
+  &__navigate {
+    margin-right: 17.5%;
+  }
+
+  &__enter-btn {
+    padding-left: 19px;
+
+    color      : #fff;
+    font-size  : 18px;
+    line-height: 25px;
+
+    background-image   : url('../img/enter.svg');
+    background-repeat  : no-repeat;
+    background-position: left center;
+  }
+
+  &__bottom {
+    padding-top     : 18px;
+    padding-bottom  : 23px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__search {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: @big-tablet-width) {
+  .header {
+    display         : flex;
+    background-color: #000;
+
+    &__top {
+      width         : 50%;
+      padding-top   : 29px;
+      padding-bottom: 29px;
+    }
+
+    &__container {
+      justify-content: space-between;
+
+      &_top {
+        padding-right: 0;
+        min-width    : auto;
+      }
+
+      &_bottom {
+        min-width: auto;
+      }
+    }
+
+    &__burger {
+      display     : flex;
+      margin-right: auto;
+    }
+
+    &__logo {
+      margin-right: 0;
+      transform   : translateX(50%);
+      height      : 42px;
+    }
+
+    &__navigate {
+      display: none;
+    }
+
+    &__enter-btn {
+      display: none;
+    }
+
+    &__bottom {
+      padding-top   : 29px;
+      padding-bottom: 29px;
+      width         : 50%;
+      display       : flex;
+      align-items   : center;
+    }
+
+    &__dropdown-nav {
+      display: none;
+    }
+
+    &__search {
+      margin-left: auto;
+    }
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .header {}
+}
+
+@media (max-width: @mobile-width) {
+  .header {
+
+    &__top,
+    &__bottom {
+      padding-top   : 12px;
+      padding-bottom: 12px;
+    }
+
+    &__logo {
+      height: 22px;
+    }
+
+    &__search-btn {
+      width : 16px;
+      height: 16px;
+    }
+  }
+}
