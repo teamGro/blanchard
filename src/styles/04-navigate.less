@@ -1,3 +1,5 @@
+@import './01-variables.less';
+
 .navigate {
 
   &__list {
@@ -9,10 +11,27 @@
   }
 
   &__link {
+    padding    : 2px 6px 8px 6px;
     font-weight: 600;
     font-size  : 18px;
     line-height: 25px;
     text-align : center;
     color      : #FFFFFF;
+    transition : color @transition-effect, outline @transition-effect;
+    cursor     : pointer;
+    outline    : none;
+
+    &:hover {
+      color: @hover-color;
+    }
+
+    &:focus {
+      border : none;
+      outline: @hover-border;
+    }
+
+    &:active {
+      color: @active-color;
+    }
   }
 }

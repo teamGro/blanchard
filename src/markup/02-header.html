@@ -2,13 +2,11 @@
   <header class="header">
     <div class="header__top">
       <div class="container header__container header__container_top">
-        <div class="header__burger-container">
-          <button class="header__burger burger">
-            <span class="burger__elem burger__elem_top"></span>
-            <span class="burger__elem burger__elem_middle"></span>
-            <span class="burger__elem burger__elem_bottom"></span>
-          </button>
-        </div>
+        <button class="header__burger burger btn">
+          <span class="burger__elem burger__elem_top"></span>
+          <span class="burger__elem burger__elem_middle"></span>
+          <span class="burger__elem burger__elem_bottom"></span>
+        </button>
 
         <a href="#" class="header__logo">
           <picture>
@@ -45,7 +43,12 @@
           </ul>
         </nav>
 
-        <button class="header__enter-btn" type="button">Войти</button>
+        <button class="header__enter-btn btn" type="button">
+          <svg class="header__btn-enter-icon" width="13px" height="13px">
+            <use xlink:href="#enter"></use>
+          </svg>
+          <span>Войти</span>
+        </button>
       </div>
     </div>
 
@@ -54,28 +57,27 @@
         <nav class="header__dropdown-nav dropdown-nav">
           <ul class="dropdown-nav__list">
             <li class="dropdown-nav__item">
-              <a href="#" class="dropdown-nav__link">Реализм</a>
+              <button class="dropdown-nav__btn btn" type="button">Реализм</button>
             </li>
             <li class="dropdown-nav__item">
-              <a href="#" class="dropdown-nav__link">Импрессионизм</a>
+              <button class="dropdown-nav__btn btn" type="button">Импрессионизм</button>
             </li>
             <li class="dropdown-nav__item">
-              <a href="#" class="dropdown-nav__link">Постимпрессионизм</a>
+              <button class="dropdown-nav__btn btn" type="button">Постимпрессионизм</button>
             </li>
             <li class="dropdown-nav__item">
-              <a href="#" class="dropdown-nav__link">Авангард</a>
+              <button class="dropdown-nav__btn btn" type="button">Авангард</button>
             </li>
             <li class="dropdown-nav__item">
-              <a href="#" class="dropdown-nav__link">Футуризм</a>
+              <button class="dropdown-nav__btn btn" type="button">Футуризм</button>
             </li>
           </ul>
         </nav>
 
         <div class="header__search search">
-          <button class="search__btn"></button>
+          <button class="search__btn btn"></button>
           <input type="text" class="search__input" placeholder="Поиск по сайту" />
         </div>
       </div>
     </div>
   </header>
-</body>
