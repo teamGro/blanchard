@@ -1,32 +1,31 @@
 @import './01-variables.less';
 
 .navigate {
-
   &__list {
     display: flex;
   }
 
   &__item:not(:last-child) {
-    margin-right: 62px;
+    margin-right: 51px;
   }
 
   &__link {
-    padding    : 2px 6px 8px 6px;
+    padding: 2px 6px 8px 6px;
     font-weight: 600;
-    font-size  : 18px;
+    font-size: 18px;
     line-height: 25px;
-    text-align : center;
-    color      : #FFFFFF;
-    transition : color @transition-effect, outline @transition-effect;
-    cursor     : pointer;
-    outline    : none;
+    text-align: center;
+    color: #ffffff;
+    transition: color @transition-effect, outline @transition-effect;
+    cursor: pointer;
+    outline: none;
 
     &:hover {
       color: @hover-color;
     }
 
     &:focus {
-      border : none;
+      border: none;
       outline: @hover-border;
     }
 

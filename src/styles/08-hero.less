@@ -1,10 +1,10 @@
 @import './01-variables.less';
 
 .hero {
-  color            : #fff;
-  background-image : url('../img/hero-img-1.jpg');
+  color: #fff;
+  background-image: url('../img/hero-img-1.jpg');
   background-repeat: no-repeat;
-  background-size  : cover;
+  background-size: cover;
 
   &__container {
     padding-top: 238px;
@@ -12,30 +12,62 @@
 
   &__title {
     margin-bottom: 20px;
-    max-width    : 597px;
-    color        : #fff;
+    max-width: 597px;
+    color: #fff;
   }
 
   &__desc {
-    max-width    : 597px;
+    max-width: 597px;
     margin-bottom: 92px;
 
     font-weight: bold;
-    font-size  : 18px;
+    font-size: 18px;
     line-height: 30px;
   }
 
   &__btn {
+    position: relative;
     margin-bottom: 122px;
-    border       : none;
-    padding      : 22.5px 35px;
+    border: none;
+    padding: 22.5px 39px;
 
-    color         : #ffffff;
-    font-size     : 18px;
-    line-height   : 25px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 25px;
     letter-spacing: 0.8px;
 
     background-color: #9d5cd0;
+
+    &:hover {
+      background-color: #9d5cd0;
+    }
+
+    &::before {
+      //content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: solid 2px #fff;
+      width: 312px;
+      min-height: 100%;
+      z-index: 10;
+      border-radius: 100px;
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid #c283f3;
+    }
+
+    &:focus::before {
+      content: '';
+    }
+
+    &:active {
+      background: #7943a4;
+      border: 3px solid #d1a9f0;
+    }
   }
 }
 
@@ -50,7 +82,7 @@
     }
 
     &__desc {
-      max-width    : 660px;
+      max-width: 660px;
       margin-bottom: 141px;
     }
 
@@ -63,20 +95,19 @@
 @media (max-width: @tablet-width) {
   .hero {
     &__desc {
-      max-width    : 660px;
+      max-width: 660px;
       margin-bottom: 134px;
     }
   }
 }
 
-
 @media (max-width: @mobile-width) {
   .hero {
     &__container {
-      padding-top   : 75px;
-      display       : flex;
+      padding-top: 75px;
+      display: flex;
       flex-direction: column;
-      align-items   : center;
+      align-items: center;
     }
 
     &__title {
@@ -85,16 +116,16 @@
 
     &__desc {
       margin-bottom: 40px;
-      font-size    : 12px;
-      line-height  : 16px;
-      text-align   : center;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
     }
 
     &__btn {
       margin-bottom: 45px;
-      padding      : 12px 17px;
+      padding: 12px 17px;
 
-      font-size  : 12px;
+      font-size: 12px;
       line-height: 16px;
     }
   }
