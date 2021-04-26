@@ -178,20 +178,23 @@ input:active {
   margin-right: auto;
 }
 .header__enter-btn {
-  padding: 2px 5.5px 7px 8.5px;
+  padding: 2px 5.5px 7px 21px;
+  outline: none;
   color: #fff;
   font-size: 18px;
   line-height: 25px;
-  transition: color 0.3s linear, border 0.3s linear;
+  transition: color 0.3s linear, outline 0.3s linear, background-image 0.3s linear;
+  background-image: url('../img/enter-btn.png');
+  background-repeat: no-repeat;
+  background-position: 4px center;
 }
-.header__enter-btn:hover {
+.header__enter-btn:hover,
+.header__enter-btn:active {
   color: #C283F3;
+  background-image: url('../img/enter-btn-hover.png');
 }
 .header__enter-btn:focus {
-  border: 2px solid #7943A4;
-}
-.header__enter-btn:active {
-  color: #7943A4;
+  outline: 2px solid #7943A4;
 }
 .header__btn-enter-icon {
   width: 13px;
