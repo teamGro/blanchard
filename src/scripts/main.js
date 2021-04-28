@@ -6,3 +6,6 @@ new Choices(select, {
 });
 
 let gallerySwiper = new Swiper('#gallerySwiper', gallerySwiperSettings);
+
+import dropDownBtnHandler from './header';
+dropDownBtnHandler();

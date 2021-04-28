@@ -1,7 +1,10 @@
 .dropdown-nav {
-
   &__list {
     display: flex;
+  }
+
+  &__item {
+    position: relative;
   }
 
   &__item:not(:last-child) {
@@ -9,22 +12,55 @@
   }
 
   &__btn {
-    display    : flex;
+    display: flex;
     align-items: center;
 
-    font-size  : 18px;
+    font-size: 18px;
     line-height: 25px;
-    color      : #fff;
+    color: #fff;
 
     &::after {
-      content      : '';
-      display      : inline-block;
-      width        : 7px;
-      height       : 7px;
-      margin-left  : 4px;
-      border-right : 1px solid #fff;
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-left: 4px;
+      border-right: 1px solid #fff;
       border-bottom: 1px solid #fff;
-      transform    : rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    &_active::after {
+      transform: rotate(-135deg);
     }
   }
+
+  &__content {
+    position: absolute;
+    display: none;
+    max-height: 80px;
+    min-width: 150px;
+    overflow-y: auto;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+  }
+
+  &__content-item {
+    padding: 9px 14px 12px;
+  }
+}
+
+.simplebar-scrollbar::before {
+  left: 0;
+  right: 0;
+  width: 2px;
+  height: 28px;
+  background-color: #9d5cd0;
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 2px;
+  background-color: #000;
 }

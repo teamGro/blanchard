@@ -42,7 +42,12 @@
             </li>
           </ul>
         </nav>
-        <button class="header__enter-btn btn" type="button">Войти</button>
+        <button class="header__enter-btn btn" type="button">
+          <svg class="header__enter-icon">
+            <use xlink:href="#enter"></use>
+          </svg>
+          <span>Войти</span>
+        </button>
       </div>
     </div>
 
@@ -51,19 +56,19 @@
         <nav class="header__dropdown-nav dropdown-nav">
           <ul class="dropdown-nav__list">
             <li class="dropdown-nav__item">
-              <button class="dropdown-nav__btn btn" type="button">Реализм</button>
+              <button class="dropdown-nav__btn btn" type="button" data-type="realism">Реализм</button>
             </li>
             <li class="dropdown-nav__item">
-              <button class="dropdown-nav__btn btn" type="button">Импрессионизм</button>
+              <button class="dropdown-nav__btn btn" type="button" data-type="inpressionism">Импрессионизм</button>
             </li>
             <li class="dropdown-nav__item">
-              <button class="dropdown-nav__btn btn" type="button">Постимпрессионизм</button>
+              <button class="dropdown-nav__btn btn" type="button" data-type="postipressionism">Постимпрессионизм</button>
             </li>
             <li class="dropdown-nav__item">
-              <button class="dropdown-nav__btn btn" type="button">Авангард</button>
+              <button class="dropdown-nav__btn btn" type="button" data-type="avangard">Авангард</button>
             </li>
             <li class="dropdown-nav__item">
-              <button class="dropdown-nav__btn btn" type="button">Футуризм</button>
+              <button class="dropdown-nav__btn btn" type="button" data-type="futurism">Футуризм</button>
             </li>
           </ul>
         </nav>
