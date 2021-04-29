@@ -16,16 +16,16 @@
     line-height: 25px;
     text-align: center;
     color: #ffffff;
-    transition: color @transition-effect, outline @transition-effect;
+    transition: color @transition-effect;
     cursor: pointer;
     outline: none;
+    border: none;
 
     &:hover {
       color: @hover-color;
     }
 
     &:focus {
-      border: none;
       outline: @hover-border;
     }
 
