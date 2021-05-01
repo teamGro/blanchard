@@ -1,41 +1,105 @@
 @import './01-variables.less';
 
 .search {
-  display: flex;
+  position: relative;
+
+  display    : flex;
   align-items: center;
 
-  &__btn {
-    width: 22px;
-    height: 22px;
-    margin-right: 11px;
+  &:hover .search__icon {
+    fill: @hover-color;
+  }
 
-    background-image: url('../img/search.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  &:hover .search__input {
+    border-bottom: 2px solid @hover-color;
+  }
+
+  &:active .search__icon {
+    fill: @hover-color;
+  }
+
+  &__btn {
+    position    : relative;
+    width       : 22px;
+    height      : 22px;
+    margin-right: 11px;
+    outline     : none;
+    border      : none;
+
+    &::after {
+      content : '';
+      position: absolute;
+      left    : -8px;
+      top     : -8px;
+
+      width : 38px;
+      height: 38px;
+    }
+
+
+    &:focus::after {
+      border: 2px solid @active-color;
+    }
+  }
+
+  &__icon {
+    fill      : #fff;
+    width     : 23px;
+    height    : 22px;
+    transition: fill @transition-effect;
+    cursor    : pointer;
   }
 
   &__input {
-    width: 218px;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.85);
-    padding: 7px 0 4px 0;
+    position     : relative;
+    width        : 218px;
+    border       : none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+    padding      : 7px 0 4px 0;
+    transition   : border-bottom @transition-effect;
+    cursor       : pointer;
 
+    caret-color     : @hover-color;
     background-color: transparent;
+    z-index         : 10;
 
     &::placeholder {
-      font-size: 18px;
+      font-size  : 18px;
       line-height: 25px;
-      color: rgba(255, 255, 255, 0.85);
+      color      : rgba(255, 255, 255, 0.85);
     }
+
+    &::after {
+      content : '';
+      position: absolute;
+      top     : -4px;
+      left    : -5px;
+
+      width : 228px;
+      height: calc(100% + 12px);
+      border: 2px solid @active-color;
+    }
+
+    &:focus+.search__input-border {
+      border: 2px solid @active-color;
+    }
+  }
+
+  &__input-border {
+    position: absolute;
+    top     : -4px;
+    right   : -5px;
+
+    width : 228px;
+    height: calc(100% + 12px);
   }
 }
 
 @media (max-width: 1599px) {
   .search {
     &__btn {
-      width: 29px;
-      height: 29px;
+      width       : 29px;
+      height      : 29px;
       margin-right: 0;
     }
 
@@ -48,7 +112,7 @@
 @media (max-width: @mobile-width) {
   .search {
     &__btn {
-      width: 16px;
+      width : 16px;
       height: 16px;
     }
   }

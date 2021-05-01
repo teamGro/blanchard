@@ -84,8 +84,13 @@
         </nav>
 
         <div class="header__search search">
-          <button class="search__btn btn"></button>
-          <input type="text" class="search__input" placeholder="Поиск по сайту" />
+          <button class="search__btn btn">
+            <svg class="search__icon">
+              <use xlink:href="#search"></use>
+            </svg>
+          </button>
+          <input type="text" class="search__input" placeholder="Поиск по сайту" name="userSearch" id="userSearch" />
+          <span class="search__input-border"></span>
         </div>
       </div>
     </div>
