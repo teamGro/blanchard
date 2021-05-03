@@ -2,19 +2,19 @@
 
 .header {
   position: fixed;
-  width: 100%;
-  z-index: 10;
+  width   : 100%;
+  z-index : 10;
 
   &__top {
     background-color: #000;
-    padding-top: 28px;
-    padding-bottom: 30px;
+    padding-top     : 28px;
+    padding-bottom  : 30px;
   }
 
   &__container {
     position: relative;
 
-    display: flex;
+    display    : flex;
     align-items: center;
   }
 
@@ -24,7 +24,7 @@
 
   &__logo {
     //height        : 40px;
-    margin-right: 173px;
+    margin-right  : 173px;
     vertical-align: middle;
   }
 
@@ -37,17 +37,16 @@
   }
 
   &__enter-btn {
-    padding: 2px 5.5px 3px 8px;
-    outline: none;
-    color: #fff;
-    font-size: 18px;
+    padding    : 2px 6px 3px 8px;
+    outline    : none;
+    color      : #fff;
+    font-size  : 18px;
     line-height: 25px;
-    transition: color @transition-effect;
+    transition : color @transition-effect;
 
     &:hover,
     &:active {
       color: @hover-color;
-      //background-image: url('../img/enter-btn-hover.png');
     }
 
     &:focus {
@@ -61,15 +60,15 @@
   }
 
   &__enter-icon {
-    width: 13px;
-    height: 13px;
-    fill: #fff;
+    width     : 13px;
+    height    : 13px;
+    fill      : #fff;
     transition: fill @transition-effect;
   }
 
   &__bottom {
-    padding-top: 18px;
-    padding-bottom: 23px;
+    padding-top     : 18px;
+    padding-bottom  : 23px;
     background-color: rgba(0, 0, 0, 0.4);
   }
 
@@ -80,12 +79,12 @@
 
 @media (max-width: @big-tablet-width) {
   .header {
-    display: flex;
+    display         : flex;
     background-color: #000;
 
     &__top {
-      width: 50%;
-      padding-top: 29px;
+      width         : 50%;
+      padding-top   : 29px;
       padding-bottom: 29px;
     }
 
@@ -94,7 +93,7 @@
 
       &_top {
         padding-right: 0;
-        min-width: auto;
+        min-width    : auto;
       }
 
       &_bottom {
@@ -103,14 +102,14 @@
     }
 
     &__burger {
-      display: flex;
+      display     : flex;
       margin-right: auto;
     }
 
     &__logo {
       margin-right: 0;
-      transform: translateX(50%);
-      height: 42px;
+      transform   : translateX(50%);
+      height      : 42px;
     }
 
     &__navigate {
@@ -122,11 +121,11 @@
     }
 
     &__bottom {
-      padding-top: 29px;
+      padding-top   : 29px;
       padding-bottom: 29px;
-      width: 50%;
-      display: flex;
-      align-items: center;
+      width         : 50%;
+      display       : flex;
+      align-items   : center;
     }
 
     &__dropdown-nav {
@@ -140,15 +139,15 @@
 }
 
 @media (max-width: @tablet-width) {
-  .header {
-  }
+  .header {}
 }
 
 @media (max-width: @mobile-width) {
   .header {
+
     &__top,
     &__bottom {
-      padding-top: 12px;
+      padding-top   : 12px;
       padding-bottom: 12px;
     }
 
@@ -157,7 +156,7 @@
     }
 
     &__search-btn {
-      width: 16px;
+      width : 16px;
       height: 16px;
     }
   }

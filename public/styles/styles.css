@@ -56,7 +56,6 @@ a {
   font: inherit;
   font-size: 1.125em;
   line-height: 1.5em;
-  cursor: pointer;
 }
 ul {
   list-style: none;
@@ -113,7 +112,7 @@ p {
   line-height: 65px;
 }
 .title {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 4.5em;
   line-height: 84px;
 }
@@ -178,7 +177,7 @@ input:active {
   margin-right: auto;
 }
 .header__enter-btn {
-  padding: 2px 5.5px 3px 8px;
+  padding: 2px 6px 3px 8px;
   outline: none;
   color: #fff;
   font-size: 18px;
@@ -288,9 +287,7 @@ input:active {
   text-align: center;
   color: #ffffff;
   transition: color 0.3s linear;
-  cursor: pointer;
   outline: none;
-  border: none;
 }
 .navigate__link:hover {
   color: #C283F3;
@@ -315,7 +312,7 @@ input:active {
   margin-right: 102px;
 }
 .dropdown-nav__item:nth-child(3) {
-  margin-right: 103px;
+  margin-right: 107px;
 }
 .dropdown-nav__item:nth-child(4) {
   margin-right: 102px;
@@ -324,10 +321,9 @@ input:active {
   margin-right: 104px;
 }
 .dropdown-nav__btn {
+  position: relative;
   display: flex;
   align-items: center;
-  padding-left: 6px;
-  padding-right: 8px;
   font-size: 18px;
   line-height: 25px;
   color: #fff;
@@ -360,8 +356,15 @@ input:active {
 .dropdown-nav__btn:active::after {
   border-color: #7943A4;
 }
-.dropdown-nav__btn:focus {
+.dropdown-nav__btn:focus::before {
   outline: 2px solid #7943A4;
+}
+.dropdown-nav__btn::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  width: calc(100% + 14px);
+  height: 100%;
 }
 .dropdown-nav__content {
   position: absolute;
@@ -569,7 +572,7 @@ input:active {
 .hero__desc {
   max-width: 597px;
   margin-bottom: 92px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   line-height: 30px;
 }
@@ -577,14 +580,15 @@ input:active {
   position: relative;
   margin-bottom: 122px;
   border: none;
-  padding: 22.5px 39px;
+  padding: 21px 37px;
   color: #ffffff;
   font-size: 18px;
   line-height: 25px;
-  letter-spacing: 0.8px;
+  font-weight: 700;
   background-color: #9d5cd0;
   transition: background-color 0.3s linear, border 0.3s linear;
   border: 3px solid transparent;
+  cursor: pointer;
 }
 .hero__btn::before {
   display: block;
