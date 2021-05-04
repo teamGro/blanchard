@@ -3,7 +3,7 @@
 .search {
   position: relative;
 
-  display    : flex;
+  display: flex;
   align-items: center;
 
   &:hover .search__icon {
@@ -19,23 +19,22 @@
   }
 
   &__btn {
-    position    : relative;
-    width       : 22px;
-    height      : 22px;
+    position: relative;
+    width: 22px;
+    height: 22px;
     margin-right: 11px;
-    outline     : none;
-    border      : none;
+    outline: none;
+    border: none;
 
     &::after {
-      content : '';
+      content: '';
       position: absolute;
-      left    : -8px;
-      top     : -8px;
+      left: -8px;
+      top: -8px;
 
-      width : 38px;
+      width: 38px;
       height: 38px;
     }
-
 
     &:focus::after {
       border: 2px solid @active-color;
@@ -43,54 +42,54 @@
   }
 
   &__icon {
-    fill      : #fff;
-    width     : 23px;
-    height    : 22px;
+    fill: #fff;
+    width: 23px;
+    height: 22px;
     transition: fill @transition-effect;
-    cursor    : pointer;
+    cursor: pointer;
   }
 
   &__input {
-    position     : relative;
-    width        : 218px;
-    border       : none;
+    position: relative;
+    width: 218px;
+    border: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0.85);
-    padding      : 7px 0 4px 0;
-    transition   : border-bottom @transition-effect;
-    cursor       : pointer;
+    padding: 7px 0 4px 0;
+    font-size: 18px;
+    line-height: 25px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: border-bottom @transition-effect;
+    cursor: pointer;
 
-    caret-color     : @hover-color;
+    caret-color: @hover-color;
     background-color: transparent;
-    z-index         : 10;
+    z-index: 10;
 
     &::placeholder {
-      font-size  : 18px;
-      line-height: 25px;
-      color      : rgba(255, 255, 255, 0.85);
     }
 
     &::after {
-      content : '';
+      content: '';
       position: absolute;
-      top     : -4px;
-      left    : -5px;
+      top: -4px;
+      left: -5px;
 
-      width : 228px;
+      width: 228px;
       height: calc(100% + 12px);
       border: 2px solid @active-color;
     }
 
-    &:focus+.search__input-border {
+    &:focus + .search__input-border {
       border: 2px solid @active-color;
     }
   }
 
   &__input-border {
     position: absolute;
-    top     : -4px;
-    right   : -5px;
+    top: -4px;
+    right: -5px;
 
-    width : 228px;
+    width: 228px;
     height: calc(100% + 12px);
   }
 }
@@ -98,8 +97,8 @@
 @media (max-width: 1599px) {
   .search {
     &__btn {
-      width       : 29px;
-      height      : 29px;
+      width: 29px;
+      height: 29px;
       margin-right: 0;
     }
 
@@ -112,7 +111,7 @@
 @media (max-width: @mobile-width) {
   .search {
     &__btn {
-      width : 16px;
+      width: 16px;
       height: 16px;
     }
   }

@@ -1,14 +1,35 @@
 let dropDownData = {
-  realism: ['Тинторетто', 'Фридрих', 'Леонардо', 'Верроккьо'],
-  inpressionism: ['Тинторетто', 'Фридрих', 'Леонардо', 'Верроккьо'],
-  postipressionism: ['Тинторетто', 'Фридрих', 'Леонардо', 'Верроккьо'],
-  avangard: ['Тинторетто', 'Фридрих', 'Леонардо', 'Верроккьо'],
-  futurism: ['Тинторетто', 'Фридрих', 'Леонардо', 'Верроккьо'],
+  realism: [
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+  ],
+  inpressionism: [
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+  ],
+  postipressionism: [
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+  ],
+  avangard: [
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+  ],
+  futurism: [
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+  ],
 };
-
-let markup = `
-  
-`;
 
 let dropDownBtn = $('.dropdown-nav__btn');
 function dropDownBtnHandler() {
@@ -24,17 +45,38 @@ function dropDownBtnHandler() {
 
       return;
     }
+
+    let mainList = $(this).closest('.dropdown-nav__list');
+    if (mainList.find('.dropdown-nav__content').length) {
+      mainList.find('.dropdown-nav__btn_active').removeClass('dropdown-nav__btn_active');
+      mainList.find('.dropdown-nav__content').slideUp('100', function () {
+        $(this).remove();
+      });
+    }
+
     $(this).addClass('dropdown-nav__btn_active');
 
     let type = $(this).attr('data-type');
     let dropDownList = `<ul class="dropdown-nav__content" data-simplebar>`;
 
     dropDownData[type].forEach((item) => {
-      dropDownList += `<li class="dropdown-nav__content-item">${item}</li>`;
+      dropDownList += `<li class="dropdown-nav__content-item" style="background-image: url(${item.bg})" tabindex="0">${item.name}</li>`;
     });
 
     dropDownList += `</ul >`;
     $(this).parent().append(dropDownList).find('.dropdown-nav__content').slideDown('100');
+  });
+
+  $(document).on('click', (e) => {
+    let target = $(e.target);
+    if (target.closest('.dropdown-nav__list').length == 0) {
+      $('.dropdown-nav__list').find('.dropdown-nav__btn_active').removeClass('dropdown-nav__btn_active');
+      $('.dropdown-nav__list')
+        .find('.dropdown-nav__content')
+        .slideUp('100', function () {
+          $(this).remove();
+        });
+    }
   });
 }
 
