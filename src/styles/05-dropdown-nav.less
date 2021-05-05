@@ -31,21 +31,17 @@
     }
   }
 
-  &__item:not(:last-child) {
-    //margin-right: 100px;
-  }
-
   &__btn {
     position: relative;
-    display: flex;
 
+    display: flex;
     align-items: center;
+    outline: none;
 
     font-size: 18px;
     line-height: 25px;
     color: #fff;
     transition: color @transition-effect;
-    outline: none;
 
     &::after {
       content: '';
@@ -80,16 +76,20 @@
     }
 
     &:focus::before {
-      outline: @hover-border;
+      content: '';
     }
 
     &::before {
-      content: '';
       position: absolute;
       left: -6px;
 
+      outline: @hover-border;
       width: calc(100% + 14px);
       height: 100%;
+    }
+
+    &_active::before {
+      outline: none;
     }
   }
 

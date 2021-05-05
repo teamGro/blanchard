@@ -22,7 +22,7 @@
     position: relative;
     width: 22px;
     height: 22px;
-    margin-right: 11px;
+    margin-right: 7px;
     outline: none;
     border: none;
 
@@ -78,19 +78,17 @@
       height: calc(100% + 12px);
       border: 2px solid @active-color;
     }
-
-    &:focus + .search__input-border {
-      border: 2px solid @active-color;
-    }
   }
 
   &__input-border {
-    position: absolute;
-    top: -4px;
-    right: -5px;
-
-    width: 228px;
+    padding: 4px 5px;
+    width: 232px;
     height: calc(100% + 12px);
+    border: 2px solid transparent;
+
+    &:focus-within {
+      border: 2px solid @active-color;
+    }
   }
 }
 
