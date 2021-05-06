@@ -1,33 +1,33 @@
 let dropDownData = {
   realism: [
-    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
-    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
-    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
-    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
   ],
   inpressionism: [
-    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
-    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
-    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
-    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
   ],
   postipressionism: [
-    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
-    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
-    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
-    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
   ],
   avangard: [
-    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
-    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
-    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
-    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
   ],
   futurism: [
-    { name: 'Тинторетто', bg: '../img/dropdownBg.png' },
-    { name: 'Фридрих', bg: '../img/dropdownBg.png' },
-    { name: 'Леонардо', bg: '../img/dropdownBg.png' },
-    { name: 'Верроккьо', bg: '../img/dropdownBg.png' },
+    { name: 'Тинторетто', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Фридрих', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Леонардо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
+    { name: 'Верроккьо', bg: '../img/dropdownBg.png', cls: 'dropdown-nav__content-item_bg' },
   ],
 };
 
@@ -60,7 +60,7 @@ function dropDownBtnHandler() {
     let dropDownList = `<ul class="dropdown-nav__content" data-simplebar>`;
 
     dropDownData[type].forEach((item) => {
-      dropDownList += `<li class="dropdown-nav__content-item" style="background-image: url(${item.bg})" tabindex="0">${item.name}</li>`;
+      dropDownList += `<li class="dropdown-nav__content-item ${item.cls}" tabindex="0">${item.name}</li>`;
     });
 
     dropDownList += `</ul >`;

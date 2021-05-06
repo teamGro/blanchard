@@ -411,6 +411,9 @@ input:active {
 .dropdown-nav__content-item:not(:last-child) {
   margin-bottom: 20px;
 }
+.dropdown-nav__content-item_bg {
+  background-image: url('../img/dropDownBg.png');
+}
 .dropdown-nav__name {
   margin-right: 4px;
 }
