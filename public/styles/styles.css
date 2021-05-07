@@ -442,7 +442,7 @@ input:active {
   fill: #C283F3;
 }
 .search:hover .search__input {
-  border-bottom: 2px solid #C283F3;
+  border-bottom: 1px solid #C283F3;
 }
 .search:active .search__icon {
   fill: #C283F3;
@@ -451,7 +451,7 @@ input:active {
   position: relative;
   width: 22px;
   height: 22px;
-  margin-right: 7px;
+  margin-right: 0px;
   outline: none;
   border: none;
 }
@@ -475,12 +475,13 @@ input:active {
 }
 .search__input {
   position: relative;
+  bottom: 6px;
   width: 218px;
   border: none;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
   padding: 7px 0 4px 0;
   font-size: 18px;
-  line-height: 25px;
+  line-height: 18px;
   color: rgba(255, 255, 255, 0.85);
   transition: border-bottom 0.3s linear;
   cursor: pointer;
@@ -488,22 +489,15 @@ input:active {
   background-color: transparent;
   z-index: 10;
 }
-.search__input::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -5px;
-  width: 228px;
-  height: calc(100% + 12px);
-  border: 2px solid #7943A4;
-}
 .search__input-border {
-  padding: 4px 5px;
+  position: relative;
+  padding: 4px 5px 4px 9px;
   width: 232px;
   height: calc(100% + 12px);
   border: 2px solid transparent;
 }
 .search__input-border:focus-within {
+  left: 4px;
   border: 2px solid #7943A4;
 }
 @media (max-width: 1599px) {
@@ -573,7 +567,7 @@ input:active {
   animation: scale 20s linear infinite alternate;
 }
 .hero__container {
-  padding-top: 238px;
+  padding-top: 134px;
 }
 .hero__title {
   margin-bottom: 20px;
@@ -591,7 +585,7 @@ input:active {
   position: relative;
   margin-bottom: 122px;
   border: none;
-  padding: 21px 37px;
+  padding: 20px 33px;
   color: #ffffff;
   font-size: 18px;
   line-height: 25px;
