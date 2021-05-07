@@ -496,9 +496,16 @@ input:active {
   height: calc(100% + 12px);
   border: 2px solid transparent;
 }
-.search__input-border:focus-within {
-  left: 4px;
+.search__input-border::before {
+  position: absolute;
+  left: 5px;
+  top: -2px;
+  width: 100%;
+  height: 100%;
   border: 2px solid #7943A4;
+}
+.search__input-border:focus-within::before {
+  content: '';
 }
 @media (max-width: 1599px) {
   .search__btn {
