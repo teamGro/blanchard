@@ -69,7 +69,7 @@
         $(this)
           .parent()
           .find('.dropdown-nav__content')
-          .slideUp('100', function () {
+          .slideUp('', function () {
             $(this).remove();
           });
 
@@ -79,7 +79,7 @@
       let mainList = $(this).closest('.dropdown-nav__list');
       if (mainList.find('.dropdown-nav__content').length) {
         mainList.find('.dropdown-nav__btn_active').removeClass('dropdown-nav__btn_active');
-        mainList.find('.dropdown-nav__content').slideUp('100', function () {
+        mainList.find('.dropdown-nav__content').slideUp('', function () {
           $(this).remove();
         });
       }
@@ -87,6 +87,11 @@
       $(this).addClass('dropdown-nav__btn_active');
 
       let type = $(this).attr('data-type');
+      // if($(this).parent().find('.dropdown-nav__content').length != 0) {
+      //   $(this).parent().find('.dropdown-nav__content').slideDown('');
+      //   return;
+      // }
+
       let dropDownList = `<ul class="dropdown-nav__content" data-simplebar>`;
 
       dropDownData[type].forEach((item) => {
@@ -94,7 +99,7 @@
       });
 
       dropDownList += `</ul >`;
-      $(this).parent().append(dropDownList).find('.dropdown-nav__content').slideDown('100');
+      $(this).parent().append(dropDownList).find('.dropdown-nav__content').slideDown('');
     });
 
     $(document).on('click', (e) => {
@@ -103,7 +108,7 @@
         $('.dropdown-nav__list').find('.dropdown-nav__btn_active').removeClass('dropdown-nav__btn_active');
         $('.dropdown-nav__list')
           .find('.dropdown-nav__content')
-          .slideUp('100', function () {
+          .slideUp('', function () {
             $(this).remove();
           });
       }

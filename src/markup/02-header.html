@@ -84,18 +84,18 @@
           </ul>
         </nav>
 
-        <div class="header__search search">
+        <form class="header__search search" action="">
           <button class="search__btn btn">
             <svg class="search__icon">
               <use xlink:href="#search"></use>
             </svg>
           </button>
-          <div class="search__input-border">
-            <input type="text" class="search__input" placeholder="Поиск по сайту" name="userSearch" id="userSearch" autocomplete="off" />
-          </div>
-          </span>
-        </div>
+          <label class="search__input-border">
+            <span class="visually-hidden">Поиск по сайту</span>
+            <input type="text" class="search__input" placeholder="Поиск по сайту" name="userSearch" id="userSearch"
+              autocomplete="off" />
+          </label>
+        </form>
       </div>
     </div>
   </header>
-

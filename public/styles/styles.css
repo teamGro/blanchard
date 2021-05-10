@@ -412,19 +412,22 @@ input:active {
   margin-bottom: 20px;
 }
 .dropdown-nav__content-item_bg {
-  background-image: url('../img/dropDownBg.png');
+  background-image: url('../img/dropdownBg.png');
 }
 .dropdown-nav__name {
   margin-right: 4px;
 }
+.simplebar-scrollbar {
+  width: 2px;
+}
 .simplebar-scrollbar::before {
   left: 0;
   right: 0;
-  width: 2px;
+  width: 1px;
   background-color: #9d5cd0;
 }
 .simplebar-track.simplebar-vertical {
-  width: 2px;
+  width: 1px;
   height: 220px;
   margin-top: 40px;
   background-color: #000;
