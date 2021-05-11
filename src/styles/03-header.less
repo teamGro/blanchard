@@ -37,20 +37,30 @@
   }
 
   &__enter-btn {
-    padding: 2px 6px 3px 8px;
+    position: relative;
+    //padding: 2px 6px 3px 8px;
     outline: none;
     color: #fff;
     font-size: 18px;
     line-height: 25px;
     transition: color @transition-effect;
 
+    &::before {
+      position: absolute;
+      top: -4px;
+      left: -7px;
+      width: calc(100% + 14px);
+      height: calc(100% + 10px);
+      border: @hover-border;
+    }
+
     &:hover,
     &:active {
       color: @hover-color;
     }
 
-    &:focus {
-      outline: @hover-border;
+    &:focus::before {
+      content: '';
     }
 
     &:hover .header__enter-icon,
