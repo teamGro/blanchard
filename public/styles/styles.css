@@ -157,7 +157,7 @@ input:active {
 .header__top {
   background-color: #000;
   padding-top: 28px;
-  padding-bottom: 30px;
+  padding-bottom: 27px;
 }
 .header__container {
   position: relative;
@@ -337,7 +337,7 @@ input:active {
   align-items: center;
   outline: none;
   font-size: 18px;
-  line-height: 25px;
+  line-height: 28px;
   color: #fff;
   transition: color 0.3s linear;
 }
@@ -431,7 +431,7 @@ input:active {
 .simplebar-scrollbar::before {
   left: 0;
   right: 0;
-  width: 1px;
+  width: 2px;
   background-color: #9d5cd0;
   opacity: 1;
 }
@@ -439,7 +439,7 @@ input:active {
   opacity: 1;
 }
 .simplebar-track.simplebar-vertical {
-  width: 1px;
+  width: 2px;
   height: 220px;
   margin-top: 40px;
   background-color: #000;
@@ -500,6 +500,7 @@ input:active {
   border-bottom: 1px solid rgba(255, 255, 255, 0.85);
   padding: 7px 0 4px 0;
   font-size: 18px;
+  font-family: inherit;
   line-height: 18px;
   color: rgba(255, 255, 255, 0.85);
   transition: border-bottom 0.3s linear;
@@ -591,9 +592,10 @@ input:active {
   background-size: cover;
   -webkit-animation: scale 20s linear infinite alternate;
   animation: scale 20s linear infinite alternate;
+  min-height: 700px;
 }
 .hero__container {
-  padding-top: 134px;
+  padding-top: 137px;
 }
 .hero__title {
   margin-bottom: 20px;
@@ -609,7 +611,6 @@ input:active {
 }
 .hero__btn {
   position: relative;
-  margin-bottom: 122px;
   border: none;
   padding: 20px 33px;
   color: #ffffff;
@@ -797,12 +798,16 @@ input:active {
 }
 .choices__inner {
   position: relative;
-  background-color: transparent;
   border-radius: 6px;
   border-color: #fff;
-  border-width: 1px;
-  z-index: 2;
   padding: 0 7.5px;
+  border-width: 1px;
+  min-height: 40px;
+  background-color: transparent;
+  z-index: 2;
+}
+.choices[data-type*='select-one'] .choices__inner {
+  padding-bottom: 0;
 }
 .is-open .choices__inner {
   border-radius: 6px;
@@ -810,7 +815,14 @@ input:active {
 .choices__placeholder {
   opacity: 1;
 }
-.choices__list--dropdown .choices__placeholder {
+.choices__list--single {
+  padding: 0px 0px 4px 7px;
+}
+.choices__item {
+  font-size: 16px;
+  line-height: 32px;
+}
+.choices__item.choices__item--choice.is-selected.choices__item--selectable {
   display: none;
 }
 .choices__list--dropdown {
@@ -831,6 +843,12 @@ input:active {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   border-color: #999;
+}
+.choices__list--dropdown .choices__item--choice {
+  min-height: 40px;
+  padding: 0 17px;
+  font-size: 16px;
+  line-height: 32px;
 }
 .swiper-container {
   width: 100%;
