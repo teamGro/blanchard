@@ -2,6 +2,7 @@
 @bg: #fff;
 
 .gallery {
+  padding-bottom: 82px;
   background-image: url('../img/gallery-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,6 +14,7 @@
   &__left-side {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     max-width: 401px;
     margin-right: 50px;
   }
@@ -23,6 +25,16 @@
     width: calc(100% - 451px);
     //padding-top: 80px;
     overflow-x: hidden;
+  }
+
+  &__controls {
+    position: absolute;
+    top: 23px;
+    left: 3px;
+
+    //min-width: 130px;
+    display: flex;
+    justify-content: center;
   }
 
   &__subtitle {
@@ -38,7 +50,10 @@
   }
 
   &__note {
-    margin-top: auto;
+    position: relative;
+    top: 13px;
+    //margin-top: auto;
+    padding-right: 20px;
     color: #fff;
 
     &_tablet {
@@ -172,10 +187,12 @@
 }
 
 .swiper-button-prev {
-  position: absolute;
-  top: 45px;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 30px;
   height: 30px;
+  margin: 0 8px 0 0;
 
   background: #666;
   border-radius: 50%;
@@ -192,11 +209,12 @@
 }
 
 .swiper-button-next {
-  position: absolute;
-  top: 45px;
-  left: 100px;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 30px;
   height: 30px;
+  margin: 0;
 
   background: #666;
   border-radius: 50%;
@@ -213,11 +231,29 @@
 }
 
 .swiper-pagination {
-  position: absolute;
-  top: 22px;
-  left: 45px;
-  width: 50px;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  // min-width: 47px;
+  // max-width: 100px;
+  display: flex;
+  margin: 0 20px 0 0;
+
   color: #fff;
+}
+
+.swiper-pagination-current {
+  margin-right: 3px;
+  padding-left: 9px;
+}
+
+.swiper-pagination-total {
+  padding-left: 5px;
+}
+
+.swiper-pagination-fraction {
+  width: auto;
 }
 
 @media (max-width: @big-tablet-width) {
