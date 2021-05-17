@@ -13,6 +13,8 @@ let gallerySwiper = new Swiper('#gallerySwiper', gallerySwiperSettings);
 import dropDownBtnHandler from './header';
 dropDownBtnHandler();
 
-import showPersonByClick from './catalog';
+import catalogs from './catalog';
 const $personList = $('#accordionPersons');
-showPersonByClick($personList);
+catalogs.showPersonByClick($personList);
+const $catalogNavs = $('#catalogNavs');
+catalogs.markActiveTab($catalogNavs);

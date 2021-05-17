@@ -1102,52 +1102,62 @@ input:active {
   align-items: center;
 }
 .catalog__nav:not(:last-child) {
-  margin-right: 25px;
+  margin-right: 50px;
 }
 .catalog__nav {
   position: relative;
   top: -4px;
-  padding: 10px;
-  border-radius: 50%;
-  border: 2px solid red;
-}
-.catalog__nav::after {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #9d5cd0;
-  border-radius: 50%;
-}
-.catalog__nav_active::after {
-  content: '';
-}
-.catalog__nav > .catalog__nav-link {
-  padding: 0;
   width: 46px;
   height: 46px;
+}
+.catalog__nav-btn {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  border: none;
+  border: 2px solid transparent;
+  transition: box-shadow 0.3s linear, border-color 0.3s linear;
   background-repeat: no-repeat;
 }
-.catalog__nav > .catalog__nav-link_french {
+.catalog__nav-btn::after {
+  position: absolute;
+  left: -11px;
+  top: -11px;
+  width: 66px;
+  height: 66px;
+  border: 2px solid #9d5cd0;
+  border-radius: 50%;
+  transition: border-color 0.3s linear;
+}
+.catalog__nav-btn:hover {
+  box-shadow: 0px 0px 20px rgba(157, 92, 208, 0.7);
+}
+.catalog__nav-btn:active,
+.catalog__nav-btn:focus {
+  border-color: #9d5cd0;
+  outline: none;
+}
+.catalog__nav-btn_active::after {
+  content: '';
+}
+.catalog__nav-btn_french {
   background-image: url('../img/lang_sprites.png');
   background-position: -142px -10px;
 }
-.catalog__nav > .catalog__nav-link_dutch {
+.catalog__nav-btn_dutch {
   background-image: url('../img/lang_sprites.png');
   background-position: -78px -10px;
 }
-.catalog__nav > .catalog__nav-link_italian {
+.catalog__nav-btn_italian {
   background-image: url('../img/lang_sprites.png');
   background-position: -10px -78px;
 }
-.catalog__nav > .catalog__nav-link_russian {
+.catalog__nav-btn_russian {
   background-image: url('../img/lang_sprites.png');
   background-position: -10px -10px;
 }
-.catalog__nav > .catalog__nav-link_belgium {
+.catalog__nav-btn_belgium {
   background-image: url('../img/lang_sprites.png');
   background-position: -75px -78px;
 }
@@ -1170,6 +1180,8 @@ input:active {
   background-color: transparent;
 }
 .catalog__accordion-button {
+  position: relative;
+  outline: none;
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
   padding: 40px 0;
@@ -1206,6 +1218,9 @@ input:active {
   box-shadow: none;
   border-color: #cacaca;
 }
+.catalog__accordion-button:focus {
+  border: 2px solid #7943A4;
+}
 .catalog__accordion-collapse {
   border-bottom: 1px solid #9d5cd0;
   border-top: 1px solid #9d5cd0;
@@ -1214,6 +1229,22 @@ input:active {
   padding: 25px 0 38px;
   -moz-column-count: 3;
   column-count: 3;
+}
+.catalog__item-text {
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s linear, border-bottom 0.3s linear;
+}
+.catalog__item-text:hover {
+  color: #C283F3;
+  border-bottom: 1px solid #9d5cd0;
+}
+.catalog__item-text:focus {
+  outline: 2px solid #7943A4;
+}
+.catalog__item-text:active {
+  color: #7943A4;
 }
 .accordion-button:not(.collapsed) {
   color: inherit;

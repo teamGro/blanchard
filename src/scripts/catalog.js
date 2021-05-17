@@ -1,3 +1,5 @@
+let catalogs = {}
+
 const personsData = [
   {
     img: '',
@@ -32,21 +34,21 @@ const personElems = {
   personStory: $('.person__story')
 };
 
-function updateMarkup(elems, data){
-  elems.personImg.prop('src', data.img || '') ;
-  elems.personImg.prop('alt', data.alt || '') ;
+function updateMarkup(elems, data) {
+  elems.personImg.prop('src', data.img || '');
+  elems.personImg.prop('alt', data.alt || '');
   elems.personName.text(data.name);
   elems.personDate.text(data.date);
   elems.personStory.text(data.text)
 }
 
-function showPersonByClick(list){
-  list.on('click', function(e){
+catalogs.showPersonByClick = function (list) {
+  list.on('click', function (e) {
     let $target = $(e.target);
-    if($target.prop('tagName') != 'LI') return;
+    if ($target.prop('tagName') != 'LI') return;
 
     let dataID = $target.attr('data-id');
-    let person = personsData.filter( item => {
+    let person = personsData.filter(item => {
       return item.attr == dataID;
     });
 
@@ -55,4 +57,17 @@ function showPersonByClick(list){
   })
 }
 
-export default showPersonByClick;
+catalogs.markActiveTab = function (list) {
+  list.on('click', function (e) {
+    let target = $(e.target);
+
+    if (target.prop('tagName') != 'BUTTON') return;
+
+    if (target.hasClass('catalog__nav-btn_active')) return;
+
+    target.closest('ul').find('.catalog__nav-btn_active').removeClass('catalog__nav-btn_active');
+    target.addClass('catalog__nav-btn_active');
+  })
+}
+
+export default catalogs;
