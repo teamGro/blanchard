@@ -12,3 +12,7 @@ let gallerySwiper = new Swiper('#gallerySwiper', gallerySwiperSettings);
 
 import dropDownBtnHandler from './header';
 dropDownBtnHandler();
+
+import showPersonByClick from './catalog';
+const $personList = $('#accordionPersons');
+showPersonByClick($personList);
