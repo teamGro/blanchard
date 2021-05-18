@@ -6,11 +6,11 @@
   }
 
   &__subtitle {
-    margin-right: 30px;
+    margin-right: 39px;
   }
 
   &__navs {
-    display    : flex;
+    display: flex;
     align-items: center;
   }
 
@@ -20,33 +20,33 @@
 
   &__nav {
     position: relative;
-    top     : -4px;
+    top: -4px;
 
-    width : 46px;
+    width: 46px;
     height: 46px;
   }
 
   &__nav-btn {
     position: relative;
 
-    padding      : 0;
-    width        : 100%;
-    height       : 100%;
+    padding: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    border       : 2px solid transparent;
-    transition   : box-shadow @transition-effect, border-color @transition-effect;
+    border: 2px solid transparent;
+    transition: box-shadow @transition-effect, border-color @transition-effect;
 
     background-repeat: no-repeat;
 
     &::after {
-      position     : absolute;
-      left         : -11px;
-      top          : -11px;
-      width        : 66px;
-      height       : 66px;
-      border       : 2px solid #9d5cd0;
+      position: absolute;
+      left: -11px;
+      top: -11px;
+      width: 66px;
+      height: 66px;
+      border: 2px solid #9d5cd0;
       border-radius: 50%;
-      transition   : border-color @transition-effect;
+      transition: border-color @transition-effect;
     }
 
     &:hover {
@@ -56,7 +56,7 @@
     &:active,
     &:focus {
       border-color: #9d5cd0;
-      outline     : none;
+      outline: none;
     }
 
     &_active::after {
@@ -64,34 +64,34 @@
     }
 
     &_french {
-      background-image   : url('../img/lang_sprites.png');
-      background-position: -142px -10px;
+      background-image: url('../img/lang_sprites.png');
+      background-position: -143 px -10px;
     }
 
     &_dutch {
-      background-image   : url('../img/lang_sprites.png');
+      background-image: url('../img/lang_sprites.png');
       background-position: -78px -10px;
     }
 
     &_italian {
-      background-image   : url('../img/lang_sprites.png');
+      background-image: url('../img/lang_sprites.png');
       background-position: -10px -78px;
     }
 
     &_russian {
-      background-image   : url('../img/lang_sprites.png');
+      background-image: url('../img/lang_sprites.png');
       background-position: -10px -10px;
     }
 
     &_belgium {
-      background-image   : url('../img/lang_sprites.png');
-      background-position: -75px -78px;
+      background-image: url('../img/lang_sprites.png');
+      background-position: -76px -78px;
     }
   }
 
   &__text {
-    max-width    : 1080px;
-    margin-bottom: 50px;
+    max-width: 1080px;
+    margin-bottom: 42px;
   }
 
   &__content {
@@ -99,7 +99,7 @@
   }
 
   &__left {
-    width        : 50%;
+    width: 50%;
     padding-right: 50px;
   }
 
@@ -108,65 +108,87 @@
   }
 
   &__accordion-item {
-    border          : none;
+    border: none;
     background-color: transparent;
-
   }
 
   &__accordion-button {
-    position        : relative;
-    outline         : none;
-    border-top      : 1px solid #cacaca;
-    border-bottom   : 1px solid #cacaca;
-    padding         : 40px 0;
-    font-weight     : 600;
+    position: relative;
+    outline: none;
+    border-top: 1px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+    padding: 39px 0;
+    font-weight: 600;
     background-color: transparent;
 
-    &::before {
-      content : '';
-      position: absolute;
-      right   : 0;
+    font-size: 24px;
+    line-height: 32px;
 
-      display      : block;
-      width        : 50px;
-      height       : 50px;
+    transition: border-color @transition-effect, color @transition-effect;
+
+    &:nth-of-type(2) {
+      z-index: 5;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+
+      display: block;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      top          : 50%;
-      transform    : translateY(-50%);
+      top: 50%;
+      transform: translateY(-50%);
 
       background-color: #ececec;
+      transition: background-color @transition-effect;
     }
 
     &::after {
-      width        : 12px;
-      height       : 12px;
-      margin-right : 18px;
+      width: 12px;
+      height: 12px;
+      margin-right: 18px;
       border-bottom: 1px solid #000;
-      border-left  : 1px solid #000;
-      transform    : rotate(-45deg);
+      border-left: 1px solid #000;
+      transform: rotate(-45deg);
 
       background-image: none;
+      transition: border-color @transition-effect;
     }
 
     &:not(.collapsed)::after {
       background-image: none;
-      transform       : rotate(135deg);
+      transform: rotate(135deg);
     }
 
-    &:focus {
-      outline     : none;
-      box-shadow  : none;
-      border-color: #cacaca;
+    &:hover {
+      border-color: #9d5cd0;
+      color: #9d5cd0;
+
+      &::before {
+        background-color: #9d5cd0;
+      }
+
+      &::after {
+        border-color: #fff;
+      }
     }
 
-    // &:after {
-    //   position: absolute;
-    //   top     : -7px;
+    &:active {
+      border-color: @active-color;
+      color: @active-color;
 
-    //   width : 100%;
-    //   height: calc(100% + 14px);
-    //   border: @hover-border;
-    // }
+      &::before {
+        background-color: @active-color;
+        border: 2px solid #d1a9f0;
+      }
+
+      &::after {
+        border-color: #fff;
+      }
+    }
 
     &:focus {
       border: @hover-border;
@@ -175,19 +197,20 @@
 
   &__accordion-collapse {
     border-bottom: 1px solid #9d5cd0;
-    border-top   : 1px solid #9d5cd0;
+    border-top: 1px solid #9d5cd0;
   }
 
   &__accordion-list {
-    padding     : 25px 0 38px;
+    padding: 25px 0 55px;
     column-count: 3;
   }
 
   &__item-text {
-    display      : inline-block;
-    cursor       : pointer;
+    display: inline-block;
+    padding: 0 6px;
+    cursor: pointer;
     border-bottom: 1px solid transparent;
-    transition   : color @transition-effect, border-bottom @transition-effect;
+    transition: color @transition-effect, border-bottom @transition-effect;
 
     &:hover {
       .link-hover;
@@ -204,7 +227,7 @@
 }
 
 .accordion-button:not(.collapsed) {
-  color           : inherit;
+  color: inherit;
   background-color: transparent;
-  box-shadow      : none;
+  box-shadow: none;
 }
