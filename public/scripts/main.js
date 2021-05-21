@@ -187,20 +187,20 @@
     });
   };
 
-  const select = document.querySelector('#galleryFilter');
+  const select = document.querySelector("#galleryFilter");
   new Choices(select, {
-    searchEnabled: false,
-    itemSelectText: '',
-    // shouldSort: false,
-    // maxItemCount: 3,
-    // placeholder: false,
+  	searchEnabled: false,
+  	itemSelectText: "",
+  	// shouldSort: false,
+  	// maxItemCount: 3,
+  	// placeholder: false,
   });
 
-  let gallerySwiper = new Swiper('#gallerySwiper', gallerySwiperSettings);
+  let gallerySwiper = new Swiper("#gallerySwiper", gallerySwiperSettings);
   dropDownBtnHandler();
-  const $personList = $('#accordionPersons');
+  const $personList = $("#accordionPersons");
   catalogs.showPersonByClick($personList);
-  const $catalogNavs = $('#catalogNavs');
+  const $catalogNavs = $("#catalogNavs");
   catalogs.markActiveTab($catalogNavs);
 
 }());
