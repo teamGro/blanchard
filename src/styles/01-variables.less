@@ -1,45 +1,46 @@
-@desctop-width   : 1920px;
+@desctop-width: 1920px;
 @big-tablet-width: 1599px;
-@tablet-width    : 1023px;
-@mobile-width    : 767px;
+@tablet-width: 1023px;
+@mobile-width: 767px;
 
-@font-family     : 'Open Sans';
-@main-font-size  : 16px;
+@font-family: "Open Sans";
+@main-font-size: 16px;
 @main-line-height: 2em;
-@main-font-color : #333;
+@main-font-color: #333;
 
-@title-font-size         : 4.5em;
-@title-font-size-mobile  : 2em;
-@title-line-height       : 6.125em;
+@title-font-size: 4.5em;
+@title-font-size-mobile: 2em;
+@title-line-height: 6.125em;
 @title-line-height-mobile: 2.75em;
 
-@subtitle-font-size         : 3em;
-@subtitle-font-size-mobile  : 1.75em;
-@subtitle-line-height       : 65px;
+@subtitle-font-size: 3em;
+@subtitle-font-size-mobile: 1.75em;
+@subtitle-line-height: 65px;
 @subtitle-line-height-mobile: 38px;
 
-@rest-font-size  : 1.5em;
+@rest-font-size: 1.5em;
 @rest-line-height: 2em;
 
-@btn-border       : 2px solid #9d5cd0;
+@btn-border: 2px solid #9d5cd0;
 @btn-border-radius: 100px;
 
-@body-bg          : #fff;
-@img-path         : '../img/';
-@hover-color      : #C283F3;
-@active-color     : #7943A4;
-@transition-effect: .3s linear;
-@hover-border     : 2px solid #7943A4;
+@body-bg: #fff;
+@img-path: "../img/";
+@hover-color: #c283f3;
+@active-color: #7943a4;
+@transition-effect: 0.3s linear;
+@hover-border: 2px solid #7943a4;
 
 .link-hover() {
-    color        : @hover-color;
-    border-bottom: 1px solid #9d5cd0;
+	color: @hover-color;
+	border-bottom: 1px solid #9d5cd0;
 }
 
 .link-focus() {
-    outline: @hover-border;
+	outline: @hover-border;
+	transition: all @transition-effect;
 }
 
 .link-active() {
-    color: @active-color;
+	color: @active-color;
 }

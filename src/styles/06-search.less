@@ -1,118 +1,122 @@
-@import './01-variables.less';
+@import "./01-variables.less";
 
 .search {
-  position: relative;
+	position: relative;
 
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
-  &:hover .search__icon {
-    fill: @hover-color;
-  }
+	&:hover .search__icon {
+		fill: @hover-color;
+	}
 
-  &:hover .search__input {
-    border-bottom: 1px solid @hover-color;
-  }
+	&:hover .search__input {
+		border-bottom: 1px solid @hover-color;
+	}
 
-  &:active .search__icon {
-    fill: @hover-color;
-  }
+	&:active .search__icon {
+		fill: @hover-color;
+	}
 
-  &__btn {
-    position: relative;
-    top: -5px;
-    left: 3px;
-    
-    width: 22px;
-    height: 22px;
-    margin-right: 0px;
-    outline: none;
-    border: none;
+	&__btn {
+		position: relative;
+		top: -5px;
+		left: 3px;
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: -8px;
-      top: -8px;
+		width: 22px;
+		height: 22px;
+		margin-right: 0px;
+		outline: none;
+		border: none;
 
-      width: 38px;
-      height: 38px;
-    }
+		&::after {
+			content: "";
+			position: absolute;
+			left: -8px;
+			top: -8px;
 
-    &:focus::after {
-      border: 2px solid @active-color;
-    }
-  }
+			width: 38px;
+			height: 38px;
+		}
 
-  &__icon {
-    fill: #fff;
-    width: 23px;
-    height: 22px;
-    transition: fill @transition-effect;
-    cursor: pointer;
-  }
+		&:focus::after {
+			border: 2px solid @active-color;
+		}
+	}
 
-  &__input {
-    position: relative;
-    bottom: 6px;
-    width: 218px;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.85);
-    padding: 7px 0 4px 0;
-    font-size: 18px;
-    font-family: inherit;
-    line-height: 18px;
-    color: rgba(255, 255, 255, 0.85);
-    transition: border-bottom @transition-effect;
-    cursor: pointer;
+	&__icon {
+		fill: #fff;
+		width: 23px;
+		height: 22px;
+		transition: fill @transition-effect;
+		cursor: pointer;
+	}
 
-    caret-color: @hover-color;
-    background-color: transparent;
-    z-index: 10;
-  }
+	&__input {
+		position: relative;
+		bottom: 6px;
+		width: 218px;
+		border: none;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+		padding: 7px 0 4px 0;
+		font-size: 18px;
+		font-family: inherit;
+		line-height: 18px;
+		color: rgba(255, 255, 255, 0.85);
+		transition: border-bottom @transition-effect;
+		cursor: pointer;
 
-  &__input-border {
-    position: relative;
-    padding: 4px 5px 4px 9px;
-    width: 232px;
-    height: calc(100% + 12px);
-    border: 2px solid transparent;
+		caret-color: @hover-color;
+		background-color: transparent;
+		z-index: 10;
 
-    &::before {
-      position: absolute;
-      left: 5px;
-      top: -2px;
+		&::placeholder {
+			color: rgba(255, 255, 255, 0.85);
+		}
+	}
 
-      width: 100%;
-      height: 100%;
-      border: 2px solid @active-color;
-    }
+	&__input-border {
+		position: relative;
+		padding: 4px 5px 4px 9px;
+		width: 232px;
+		height: calc(100% + 12px);
+		border: 2px solid transparent;
 
-    &:focus-within::before {
-      content: '';
-    }
-  }
+		&::before {
+			position: absolute;
+			left: 5px;
+			top: -2px;
+
+			width: 100%;
+			height: 100%;
+			border: 2px solid @active-color;
+		}
+
+		&:focus-within::before {
+			content: "";
+		}
+	}
 }
 
 @media (max-width: 1599px) {
-  .search {
-    &__btn {
-      width: 29px;
-      height: 29px;
-      margin-right: 0;
-    }
+	.search {
+		&__btn {
+			width: 29px;
+			height: 29px;
+			margin-right: 0;
+		}
 
-    &__input {
-      display: none;
-    }
-  }
+		&__input {
+			display: none;
+		}
+	}
 }
 
 @media (max-width: @mobile-width) {
-  .search {
-    &__btn {
-      width: 16px;
-      height: 16px;
-    }
-  }
+	.search {
+		&__btn {
+			width: 16px;
+			height: 16px;
+		}
+	}
 }
