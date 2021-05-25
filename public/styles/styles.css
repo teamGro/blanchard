@@ -785,11 +785,13 @@ input:active {
   top: 13px;
   padding-right: 20px;
   color: #fff;
+  letter-spacing: 0.5px;
 }
 .gallery__note_tablet {
   display: none;
 }
 .gallery__autorize {
+  letter-spacing: 0.5px;
   color: #9d5cd0;
   outline: 2px solid transparent;
   transition: color 0.3s linear, border-bottom 0.3s linear;
@@ -1137,8 +1139,9 @@ input:active {
 }
 .catalog__nav-btn::after {
   position: absolute;
-  left: -12px;
-  top: -12px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 66px;
   height: 66px;
   border: 2px solid #9d5cd0;
@@ -1158,23 +1161,23 @@ input:active {
 }
 .catalog__nav-btn_french {
   background-image: url("../img/lang_sprites.png");
-  background-position: -143.5px -11px;
+  background-position: -144.5px -11px;
 }
 .catalog__nav-btn_dutch {
   background-image: url("../img/lang_sprites.png");
-  background-position: -78px -10px;
+  background-position: -78px -13px;
 }
 .catalog__nav-btn_italian {
   background-image: url("../img/lang_sprites.png");
-  background-position: -10px -78px;
+  background-position: -11px -78px;
 }
 .catalog__nav-btn_russian {
   background-image: url("../img/lang_sprites.png");
-  background-position: -12px -12px;
+  background-position: -11px -10.5px;
 }
 .catalog__nav-btn_belgium {
   background-image: url("../img/lang_sprites.png");
-  background-position: -76px -78px;
+  background-position: -77px -78.5px;
 }
 .catalog__text {
   max-width: 1080px;
@@ -1265,7 +1268,7 @@ input:active {
   border-top: 1px solid #9d5cd0;
 }
 .catalog__accordion-list {
-  padding: 25px 0 55px;
+  padding: 25px 0 29px;
   -moz-column-count: 3;
   column-count: 3;
 }
@@ -1274,7 +1277,10 @@ input:active {
   padding: 0 6px;
   cursor: pointer;
   border-bottom: 1px solid transparent;
-  transition: color 0.3s linear, border-bottom 0.3s linear;
+  outline: 1px solid transparent;
+  transition: color 0.3s linear, border-bottom 0.3s linear, outline 0.3s linear;
+  margin-top: 1.5px;
+  margin-bottom: 1.5px;
 }
 .catalog__item-text:hover {
   color: #c283f3;
@@ -1294,6 +1300,10 @@ input:active {
   color: inherit;
   background-color: transparent;
   box-shadow: none;
+}
+.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .person__img-box {

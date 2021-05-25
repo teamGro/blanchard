@@ -38,10 +38,16 @@
 
 		background-repeat: no-repeat;
 
+		//border: 1px solid red;
+		//outline: 1px solid red;
+
 		&::after {
 			position: absolute;
-			left: -12px;
-			top: -12px;
+			// left: -12px;
+			// top: -12px;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
 			width: 66px;
 			height: 66px;
 			border: 2px solid #9d5cd0;
@@ -65,27 +71,27 @@
 
 		&_french {
 			background-image: url("../img/lang_sprites.png");
-			background-position: -143.5px -11px;
+			background-position: -144.5px -11px;
 		}
 
 		&_dutch {
 			background-image: url("../img/lang_sprites.png");
-			background-position: -78px -10px;
+			background-position: -78px -13px;
 		}
 
 		&_italian {
 			background-image: url("../img/lang_sprites.png");
-			background-position: -10px -78px;
+			background-position: -11px -78px;
 		}
 
 		&_russian {
 			background-image: url("../img/lang_sprites.png");
-			background-position: -12px -12px;
+			background-position: -11px -10.5px;
 		}
 
 		&_belgium {
 			background-image: url("../img/lang_sprites.png");
-			background-position: -76px -78px;
+			background-position: -77px -78.5px;
 		}
 	}
 
@@ -201,7 +207,7 @@
 	}
 
 	&__accordion-list {
-		padding: 25px 0 55px;
+		padding: 25px 0 29px;
 		column-count: 3;
 	}
 
@@ -210,7 +216,10 @@
 		padding: 0 6px;
 		cursor: pointer;
 		border-bottom: 1px solid transparent;
-		transition: color @transition-effect, border-bottom @transition-effect;
+		outline: 1px solid transparent;
+		transition: color @transition-effect, border-bottom @transition-effect, outline @transition-effect;
+		margin-top: 1.5px;
+		margin-bottom: 1.5px;
 
 		&:hover {
 			.link-hover;
@@ -234,4 +243,9 @@
 	color: inherit;
 	background-color: transparent;
 	box-shadow: none;
+}
+
+.accordion-item:first-of-type .accordion-button {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
