@@ -1117,6 +1117,7 @@ input:active {
 .catalog__navs {
   display: flex;
   align-items: center;
+  border-bottom: none;
 }
 .catalog__nav:not(:last-child) {
   margin-right: 50px;
@@ -1127,7 +1128,7 @@ input:active {
   width: 46px;
   height: 46px;
 }
-.catalog__nav-btn {
+.catalog .catalog__nav-btn {
   position: relative;
   padding: 0;
   width: 100%;
@@ -1137,7 +1138,7 @@ input:active {
   transition: box-shadow 0.3s linear, border-color 0.3s linear;
   background-repeat: no-repeat;
 }
-.catalog__nav-btn::after {
+.catalog .catalog__nav-btn::after {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1148,34 +1149,34 @@ input:active {
   border-radius: 50%;
   transition: border-color 0.3s linear;
 }
-.catalog__nav-btn:hover {
+.catalog .catalog__nav-btn:hover {
   box-shadow: 0px 0px 20px rgba(157, 92, 208, 0.7);
 }
-.catalog__nav-btn:active,
-.catalog__nav-btn:focus {
+.catalog .catalog__nav-btn:active,
+.catalog .catalog__nav-btn:focus {
   border-color: #9d5cd0;
   outline: none;
 }
-.catalog__nav-btn_active::after {
+.catalog .catalog__nav-btn_active::after {
   content: "";
 }
-.catalog__nav-btn_french {
+.catalog .catalog__nav-btn_french {
   background-image: url("../img/lang_sprites.png");
   background-position: -144.5px -11px;
 }
-.catalog__nav-btn_dutch {
+.catalog .catalog__nav-btn_dutch {
   background-image: url("../img/lang_sprites.png");
   background-position: -78px -13px;
 }
-.catalog__nav-btn_italian {
+.catalog .catalog__nav-btn_italian {
   background-image: url("../img/lang_sprites.png");
   background-position: -11px -78px;
 }
-.catalog__nav-btn_russian {
+.catalog .catalog__nav-btn_russian {
   background-image: url("../img/lang_sprites.png");
   background-position: -11px -10.5px;
 }
-.catalog__nav-btn_belgium {
+.catalog .catalog__nav-btn_belgium {
   background-image: url("../img/lang_sprites.png");
   background-position: -77px -78.5px;
 }
@@ -1304,6 +1305,10 @@ input:active {
 .accordion-item:first-of-type .accordion-button {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  border-color: transparent;
 }
 
 .person__img-box {
