@@ -11,7 +11,7 @@
 
 	&__navs {
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		border-bottom: none;
 	}
 
@@ -96,6 +96,10 @@
 		}
 	}
 
+	&__tab-content {
+		margin-top: 15px;
+	}
+
 	&__text {
 		max-width: 1080px;
 		margin-bottom: 42px;
@@ -131,7 +135,7 @@
 		font-size: 24px;
 		line-height: 32px;
 
-		transition: border-color @transition-effect, color @transition-effect;
+		transition: outline @transition-effect, color @transition-effect;
 
 		&:nth-of-type(2) {
 			z-index: 5;
@@ -198,7 +202,8 @@
 		}
 
 		&:focus {
-			border: @hover-border;
+			outline: @hover-border;
+			box-shadow: none;
 		}
 	}
 
@@ -214,13 +219,17 @@
 
 	&__item-text {
 		display: inline-block;
-		padding: 0 6px;
+		padding: 0;
+		margin: 0;
 		cursor: pointer;
-		border-bottom: 1px solid transparent;
+		border: none;
 		outline: 1px solid transparent;
 		transition: color @transition-effect, border-bottom @transition-effect, outline @transition-effect;
 		margin-top: 1.5px;
 		margin-bottom: 1.5px;
+
+		line-height: 29px;
+		background-color: transparent;
 
 		&:hover {
 			.link-hover;
@@ -254,4 +263,8 @@
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
 	border-color: transparent;
+}
+
+.accordion-button:focus:not(:focus-visible) {
+	outline: @hover-border;
 }

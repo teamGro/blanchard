@@ -1,182 +1,191 @@
-@import '01-variables.less';
+@import "01-variables.less";
 
 /* open-sans-regular - latin_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/open-sans-v18-latin_cyrillic-regular.woff2') format('woff2'), url('../fonts/open-sans-v18-latin_cyrillic-regular.woff') format('woff');
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/open-sans-v18-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/open-sans-v18-latin_cyrillic-regular.woff") format("woff");
 }
 
 /* open-sans-600 - latin_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../fonts/open-sans-v18-latin_cyrillic-600.woff2') format('woff2'), url('../fonts/open-sans-v18-latin_cyrillic-600.woff') format('woff');
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	src: url("../fonts/open-sans-v18-latin_cyrillic-600.woff2") format("woff2"), url("../fonts/open-sans-v18-latin_cyrillic-600.woff") format("woff");
 }
 
 /* open-sans-700 - latin_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/open-sans-v18-latin_cyrillic-700.woff2') format('woff2'), url('../fonts/open-sans-v18-latin_cyrillic-700.woff') format('woff');
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/open-sans-v18-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/open-sans-v18-latin_cyrillic-700.woff") format("woff");
 }
 
 html {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  position: relative;
+	position: relative;
 
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
-  //overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+	//overflow-x: hidden;
 
-  background-color: @body-bg;
+	background-color: @body-bg;
 
-  font-family: @font-family, Arial, sans-serif;
-  font-size: @main-font-size;
-  font-weight: 400;
-  color: @main-font-color;
-  line-height: @main-line-height;
-  word-wrap: break-word;
-  letter-spacing: 0em;
+	font-family: @font-family, Arial, sans-serif;
+	font-size: @main-font-size;
+	font-weight: 400;
+	color: @main-font-color;
+	line-height: @main-line-height;
+	word-wrap: break-word;
+	letter-spacing: 0em;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  font: inherit;
-  font-size: 1.125em;
-  line-height: 1.5em;
+	text-decoration: none;
+	color: inherit;
+	font: inherit;
+	font-size: 1.125em;
+	line-height: 1.5em;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 h1,
 h2,
 h3,
 p {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 
-  font: inherit;
+	font: inherit;
 }
 
 .btn {
-  border: none;
-  margin: 0;
-  padding: 0;
+	border: none;
+	margin: 0;
+	padding: 0;
 
-  font: inherit;
+	font: inherit;
 
-  background-color: transparent;
-  cursor: pointer;
+	background-color: transparent;
+	cursor: pointer;
 }
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 .main-btn {
-  box-shadow: none;
-  border: @btn-border;
-  border-radius: @btn-border-radius;
-  padding: 17px 35px;
-  font: inherit;
+	box-shadow: none;
+	border: @btn-border;
+	border-radius: @btn-border-radius;
+	padding: 17px 35px;
+	font: inherit;
 }
 
 .visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  padding: 0 !important;
-  overflow: hidden;
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	padding: 0 !important;
+	overflow: hidden;
 }
 
 .container {
-  width: 100%;
-  max-width: 1600px;
-  min-width: 320px;
-  margin: 0 auto;
-  padding: 0;
+	width: 100%;
+	max-width: 1600px;
+	min-width: 320px;
+	margin: 0 auto;
+	padding: 0;
 }
 
 .subtitle {
-  margin-bottom: 15px;
+	// margin-bottom: 15px;
 
-  text-align: left;
-  font-size: @subtitle-font-size;
-  line-height: @subtitle-line-height;
+	text-align: left;
+	font-size: @subtitle-font-size;
+	line-height: @subtitle-line-height;
 }
 
 .title {
-  font-weight: 700;
-  font-size: @title-font-size;
-  line-height: 84px;
+	font-weight: 700;
+	font-size: @title-font-size;
+	line-height: 84px;
 }
 
 input:hover,
 input:focus,
 input:active {
-  outline: none;
+	outline: none;
 }
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 71px;
+	padding-top: 80px;
+	padding-bottom: 71px;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+	outline: none;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+	box-shadow: none;
 }
 
 @media (max-width: 1599px) {
-  .container {
-    padding: 0 37px 0 50px;
-  }
+	.container {
+		padding: 0 37px 0 50px;
+	}
 
-  .btn {
-    padding: 15px 41px;
-  }
+	.btn {
+		padding: 15px 41px;
+	}
 }
 
 @media (max-width: 767px) {
-  .container {
-    padding: 0 15px;
-  }
+	.container {
+		padding: 0 15px;
+	}
 
-  .title {
-    font-size: @title-font-size-mobile;
-    line-height: 41px;
-  }
+	.title {
+		font-size: @title-font-size-mobile;
+		line-height: 41px;
+	}
 
-  .subtitle {
-    margin-bottom: 13px;
+	.subtitle {
+		margin-bottom: 13px;
 
-    font-size: @subtitle-font-size-mobile;
-    line-height: @subtitle-line-height-mobile;
-  }
+		font-size: @subtitle-font-size-mobile;
+		line-height: @subtitle-line-height-mobile;
+	}
 }

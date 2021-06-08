@@ -1,14 +1,14 @@
 let catalogs = {};
 
 const personsData = [
-	{
-		img: "",
-		name: "Бенедетто ди Биндо",
-		date: "2 июня 1448 — 11 января 1494",
-		text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ex maiores necessitatibus accusamus deleniti magni quis incidunt corrupti voluptatibus nemo facere at unde, nobis non mollitia optio reprehenderit deserunt velit repudiandae nam! Id tenetur voluptatem iste saepe porro repellendus similique atque laboriosam officiis obcaecati? Dolorem illo iure dolore laborum praesentium atque necessitatibus similique labore ullam. Necessitatibus ad molestiae, itaque molestias, ut quas nam fuga aut delectus nostrum, illum voluptates reprehenderit commodi animi consequuntur debitis suscipit! Consequatur repellendus qui rem deserunt quasi fugiat consequuntur officiis ipsa?`,
-		attr: "diBindo",
-		alt: "Бенедетто ди Биндо",
-	},
+	// {
+	// 	img: "",
+	// 	name: "Бенедетто ди Биндо",
+	// 	date: "2 июня 1448 — 11 января 1494",
+	// 	text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ex maiores necessitatibus accusamus deleniti magni quis incidunt corrupti voluptatibus nemo facere at unde, nobis non mollitia optio reprehenderit deserunt velit repudiandae nam! Id tenetur voluptatem iste saepe porro repellendus similique atque laboriosam officiis obcaecati? Dolorem illo iure dolore laborum praesentium atque necessitatibus similique labore ullam. Necessitatibus ad molestiae, itaque molestias, ut quas nam fuga aut delectus nostrum, illum voluptates reprehenderit commodi animi consequuntur debitis suscipit! Consequatur repellendus qui rem deserunt quasi fugiat consequuntur officiis ipsa?`,
+	// 	attr: "diBindo",
+	// 	alt: "Бенедетто ди Биндо",
+	// },
 	{
 		img: "../img/catalog-domeniko.jpg",
 		name: "Доменико Гирландайо",
@@ -113,7 +113,7 @@ function updateMarkup(elems, data) {
 catalogs.showPersonByClick = function (list) {
 	list.on("click", function (e) {
 		let $target = $(e.target);
-		if ($target.prop("tagName") != "SPAN") return;
+		if ($target.prop("tagName") != "BUTTON" || $target.hasClass("accordion-button")) return;
 
 		$target = $target.parent();
 		let dataID = $target.attr("data-id");
