@@ -781,11 +781,11 @@ input:active {
   left: 3px;
 }
 .gallery__subtitle {
+  margin-bottom: 15px;
   color: #fff;
 }
 .gallery__filter-title {
   margin-bottom: 10px;
-  margin-top: 15px;
   color: #fff;
 }
 .gallery__note {
@@ -1119,6 +1119,7 @@ input:active {
 
 .catalog__top-box {
   display: flex;
+  margin-bottom: 15px;
 }
 .catalog__subtitle {
   margin-right: 39px;
@@ -1189,9 +1190,6 @@ input:active {
   background-image: url("../img/lang_sprites.png");
   background-position: -77px -78.5px;
 }
-.catalog__tab-content {
-  margin-top: 15px;
-}
 .catalog__text {
   max-width: 1080px;
   margin-bottom: 42px;
@@ -1200,8 +1198,8 @@ input:active {
   display: flex;
 }
 .catalog__left {
-  width: 50%;
-  padding-right: 50px;
+  width: calc(50% - 50px);
+  margin-right: 50px;
 }
 .catalog__right {
   width: 50%;
@@ -1292,6 +1290,7 @@ input:active {
   margin: 0;
   cursor: pointer;
   border: none;
+  border-bottom: 1px solid transparent;
   outline: 1px solid transparent;
   transition: color 0.3s linear, border-bottom 0.3s linear, outline 0.3s linear;
   margin-top: 1.5px;
@@ -1328,6 +1327,10 @@ input:active {
 }
 .accordion-button:focus:not(:focus-visible) {
   outline: 2px solid #7943a4;
+}
+.accordion-item:last-of-type .accordion-collapse {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .person__img-box {

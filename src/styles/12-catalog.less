@@ -3,6 +3,7 @@
 .catalog {
 	&__top-box {
 		display: flex;
+		margin-bottom: 15px;
 	}
 
 	&__subtitle {
@@ -96,10 +97,6 @@
 		}
 	}
 
-	&__tab-content {
-		margin-top: 15px;
-	}
-
 	&__text {
 		max-width: 1080px;
 		margin-bottom: 42px;
@@ -110,8 +107,8 @@
 	}
 
 	&__left {
-		width: 50%;
-		padding-right: 50px;
+		width: calc(50% - 50px);
+		margin-right: 50px;
 	}
 
 	&__right {
@@ -223,6 +220,7 @@
 		margin: 0;
 		cursor: pointer;
 		border: none;
+		border-bottom: 1px solid transparent;
 		outline: 1px solid transparent;
 		transition: color @transition-effect, border-bottom @transition-effect, outline @transition-effect;
 		margin-top: 1.5px;
@@ -267,4 +265,9 @@
 
 .accordion-button:focus:not(:focus-visible) {
 	outline: @hover-border;
+}
+
+.accordion-item:last-of-type .accordion-collapse {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 }
