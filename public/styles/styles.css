@@ -1168,26 +1168,26 @@ input:active {
   outline: none;
 }
 .catalog .catalog__nav-btn_active::after {
-  content: "";
+  content: '';
 }
 .catalog .catalog__nav-btn_french {
-  background-image: url("../img/lang_sprites.png");
+  background-image: url('../img/lang_sprites.png');
   background-position: -144.5px -11px;
 }
 .catalog .catalog__nav-btn_dutch {
-  background-image: url("../img/lang_sprites.png");
+  background-image: url('../img/lang_sprites.png');
   background-position: -78px -13px;
 }
 .catalog .catalog__nav-btn_italian {
-  background-image: url("../img/lang_sprites.png");
+  background-image: url('../img/lang_sprites.png');
   background-position: -11px -78px;
 }
 .catalog .catalog__nav-btn_russian {
-  background-image: url("../img/lang_sprites.png");
+  background-image: url('../img/lang_sprites.png');
   background-position: -11px -10.5px;
 }
 .catalog .catalog__nav-btn_belgium {
-  background-image: url("../img/lang_sprites.png");
+  background-image: url('../img/lang_sprites.png');
   background-position: -77px -78.5px;
 }
 .catalog__text {
@@ -1224,7 +1224,7 @@ input:active {
   z-index: 5;
 }
 .catalog__accordion-button::before {
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
   display: block;
