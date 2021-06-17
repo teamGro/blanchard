@@ -255,6 +255,20 @@
   	});
   };
 
+  function showEvents(btn) {
+    // if ($(window).width() < 767) {
+    //     btn.addClass('events__btn_hidden');
+    //     $('.events__item_hidden').removeClass('visually-hidden');
+    //     return;
+    // }
+    btn.on('click', function () {
+
+        //$('.events__item_hidden').slideDown();
+        $('.events__item_hidden').removeClass('visually-hidden');
+        $(this).addClass('events__btn_hidden');
+    });
+  }
+
   const select = document.querySelector('#galleryFilter');
   new Choices(select, {
   	searchEnabled: false,
@@ -297,5 +311,11 @@
   		catalogs.updateMarkup(catalogs.personElems, person[0]);
   	});
   });
+  const $eventsBtn = $('#eventsBtn');
+  showEvents($eventsBtn);
+  // showOrHideEvents($('.events__item'), 1, 1024);
+  // $(window).on('resize', () => {
+  //   showOrHideEvents($('.events__item'), 2, 1024);
+  // });
 
 }());

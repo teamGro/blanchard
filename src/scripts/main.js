@@ -45,3 +45,13 @@ $('.catalog__nav-btn').each(function () {
 		catalogs.updateMarkup(catalogs.personElems, person[0]);
 	});
 });
+
+//
+import showEvents from './cards';
+const $eventsBtn = $('#eventsBtn');
+let eventsSlider = null;
+showEvents($eventsBtn);
+// showOrHideEvents($('.events__item'), 1, 1024);
+// $(window).on('resize', () => {
+//   showOrHideEvents($('.events__item'), 2, 1024);
+// });
