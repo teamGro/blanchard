@@ -1214,6 +1214,9 @@ input:active {
   border: none;
   background-color: transparent;
 }
+.catalog__accordion-date {
+  transition: background-color 0.3s linear;
+}
 .catalog__accordion-button {
   position: relative;
   outline: none;
@@ -1285,7 +1288,7 @@ input:active {
   display: inline-block;
   background-color: #9D5CD0;
   color: #fff;
-  padding: 2px;
+  padding: 0 2px;
 }
 .catalog__accordion-button:focus::before {
   background-color: #D1A9F0;

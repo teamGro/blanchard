@@ -118,6 +118,10 @@
 		background-color: transparent;
 	}
 
+	&__accordion-date {
+		transition: background-color @transition-effect;
+	}
+
 	&__accordion-button {
 		position: relative;
 		outline: none;
@@ -203,7 +207,7 @@
 				display: inline-block;
 				background-color: @focus-bg;
 				color: #fff;
-				padding: 2px;
+				padding: 0 2px;
 		} 
 		&::before {
 			background-color: #D1A9F0;
