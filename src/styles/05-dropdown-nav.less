@@ -83,7 +83,8 @@
       position: absolute;
       left: -6px;
 
-      outline: @hover-border;
+      //outline: @hover-border;
+      background-color: @focus-bg;
       width: calc(100% + 14px);
       height: 100%;
     }
@@ -133,7 +134,9 @@
 
     &:active {
       outline: 2px solid #d1a9f0;
-      background-color: rgba(194, 131, 243, 0.4);
+      //background-color: rgba(194, 131, 243, 0.4);
+      background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+     // border: 2px solid #D1A9F0;
     }
 
     &:not(:last-child) {
@@ -146,6 +149,7 @@
   }
 
   &__name {
+    position: relative;
     margin-right: 4px;
   }
 }

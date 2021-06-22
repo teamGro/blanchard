@@ -51,7 +51,8 @@
       left: -7px;
       width: calc(100% + 14px);
       height: calc(100% + 10px);
-      border: @hover-border;
+      //border: @hover-border;
+      background-color: @focus-bg;
     }
 
     &:hover,
@@ -70,10 +71,15 @@
   }
 
   &__enter-icon {
+    position: relative;
     width: 13px;
     height: 13px;
     fill: #fff;
     transition: fill @transition-effect;
+  }
+
+  &__enter-text {
+    position: relative;
   }
 
   &__bottom {

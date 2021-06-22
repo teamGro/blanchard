@@ -40,9 +40,6 @@
 
 		background-repeat: no-repeat;
 
-		//border: 1px solid red;
-		//outline: 1px solid red;
-
 		&::after {
 			position: absolute;
 			// left: -12px;
@@ -57,14 +54,15 @@
 			transition: border-color @transition-effect;
 		}
 
-		&:hover {
-			box-shadow: 0px 0px 20px rgba(157, 92, 208, 0.7);
+		&:active {
+			border: 2px solid @active-color;
 		}
 
-		&:active,
-		&:focus {
-			border-color: #9d5cd0;
+
+		&:focus, &:hover {
+			box-shadow: 0px 0px 20px rgba(157, 92, 208, 0.7);
 			outline: none;
+			//border-width: 0;
 		}
 
 		&_active::after {
@@ -163,7 +161,7 @@
 			transform: rotate(-45deg);
 
 			background-image: none;
-			transition: border-color @transition-effect;
+			transition: border-color @transition-effect, background-color @transition-effect;
 		}
 
 		&:not(.collapsed)::after {
@@ -199,8 +197,17 @@
 		}
 
 		&:focus {
-			outline: @hover-border;
-			box-shadow: none;
+			outline: none;
+			& .catalog__accordion-date {
+				box-shadow: none;
+				display: inline-block;
+				background-color: @focus-bg;
+				color: #fff;
+				padding: 2px;
+		} 
+		&::before {
+			background-color: #D1A9F0;
+		}
 		}
 	}
 
@@ -222,7 +229,7 @@
 		border: none;
 		border-bottom: 1px solid transparent;
 		outline: 1px solid transparent;
-		transition: color @transition-effect, border-bottom @transition-effect, outline @transition-effect;
+		transition: color @transition-effect, border-bottom @transition-effect, background-color @transition-effect;
 		margin-top: 1.5px;
 		margin-bottom: 1.5px;
 
@@ -234,7 +241,9 @@
 		}
 
 		&:focus {
-			.link-focus;
+			//.link-focus;
+			background-color: @focus-bg;
+			color: #fff
 		}
 
 		&:active {
@@ -264,10 +273,19 @@
 }
 
 .accordion-button:focus:not(:focus-visible) {
-	outline: @hover-border;
+	outline: none;
 }
 
 .accordion-item:last-of-type .accordion-collapse {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+	border-color: transparent;
+}
+
+.accordion-button:focus {
+	//	border-col: none;
+	box-shadow: none;
 }
