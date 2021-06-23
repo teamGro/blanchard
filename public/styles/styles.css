@@ -1386,9 +1386,6 @@ input:active {
 .events {
   padding-bottom: 80px;
 }
-.events__swiper-container {
-  margin-bottom: 50px;
-}
 .events__title {
   margin-bottom: 16px;
 }
@@ -1480,6 +1477,7 @@ input:active {
 }
 .card__content {
   padding-right: 31px;
+  padding-bottom: 82px;
 }
 .card__link-box {
   margin-top: auto;
